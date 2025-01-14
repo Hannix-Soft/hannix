@@ -4,6 +4,7 @@ _C=True
 _B='country'
 _A='phone'
 import json,os
+import uuid
 os.system('pip install pytest-shutil bs4 fuzzywuzzy pyfiglet pystyle faker phonenumbers requests whois python-whois py-whois pywhois pythonwhois colorama fake-useragent Threaded beautifulsoup4')
 import colorama,requests,phonenumbers,platform,csv,re,pystyle,socket,threading,datetime,time,string,faker,bs4,urllib.parse,colorama,concurrent.futures,random,datetime,platform,whois,threading,time,hashlib,pyfiglet,smtplib,sys,bs4,smtplib as smtp,time,fake_useragent,functools,csv,glob
 from keyauth import api
@@ -89,6 +90,8 @@ def display_results(results):
 def getchecksum():A=hashlib.md5();B=open(''.join(sys.argv),'rb');A.update(B.read());C=A.hexdigest();return C
 keyauthapp=api(name='Hannix',ownerid='lansb5R41v',secret='86f2ca672a473fc452f38291a39bec40f95a1ebadf82acb1b0ac45112f3e02f1',version='1.0',hash_to_check=getchecksum())
 print('')
+def get_hwid():
+       return str(uuid.uuid4())
 key=input(Fore.MAGENTA+'   🔑 Введите ключ, который вам выдали: ')
 keyauthapp.license(key)
 os.system('clear')
