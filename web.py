@@ -92,6 +92,7 @@ keyauthapp=api(name='Hannix',ownerid='lansb5R41v',secret='86f2ca672a473fc452f382
 print('')
 def get_hwid():
        return str(uuid.uuid4())
+get_hwid()
 key=input(Fore.MAGENTA+'   🔑 Введите ключ, который вам выдали: ')
 keyauthapp.license(key)
 os.system('clear')
